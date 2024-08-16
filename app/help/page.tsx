@@ -10,13 +10,13 @@ export default function Help() {
             <li className="text-center">このサイトはログインが<span className="highlight">必須条件</span>になっています。</li>
             <li className="text-center">ログインされない場合は利用できません。</li>
             <li className="text-center">ログインにはGoogleアカウントを使用しています。</li>
-            <li className="text-center">ログインページで新規登録することができます。</li>
         </ul>
 
         <ul className="main">投稿について</ul>
         <ul>
             <li className="text-center">投稿ページでは投稿する写真や画像の選択・日付・コメントが入力できます。</li>
-            <li className="text-center">投稿が完了すると自動的にNew Postにページがとびます。</li>
+            <li className="text-center">イベント日付は選択されなかった場合、自動的に投稿日時が入力されます。</li>
+            <li className="text-center">投稿が完了すると自動的にNew Postにページに画面遷移します。</li>
         </ul>
 
         <ul className="main">写真の選択について</ul>
@@ -27,7 +27,6 @@ export default function Help() {
             <li className="text-center">その場合はファイル名を変更して再度アップロードしなおしてください。</li>
         </ul>
         
-        <ul className="qanda">Q&A</ul>
     </div>
     );
 }

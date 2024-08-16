@@ -53,10 +53,17 @@ export default function AboutSite() {
                 />
                 <Image
                     className="react"
-                    src="/imagefile/react.png"
+                    src="/imagefile/React copy.png"
                     width={100}
                     height={100}
                     alt="react Icon"
+                />
+                <Image
+                    className="googlemapapi"
+                    src="/imagefile/googlemap copy.png"
+                    width={100}
+                    height={100}
+                    alt="google map api Icon"
                 />
             </div>
         </>
