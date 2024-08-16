@@ -16,7 +16,7 @@ interface Comment {
 }
 
 export default function DetailPage() {
-    const pathname = usePathname()
+    const pathname = usePathname();
     const photoUrl = pathname.replace(/^\/detail\//, '');
     console.log(photoUrl);
     const [user_id, setUserId] = useState<string>("");
@@ -25,12 +25,23 @@ export default function DetailPage() {
     const [loadingState, setLoadingState] = useState("hidden");
     const [comment, setComment] = useState<Comment>();
     const supabase = createClientComponentClient();
-    const router = useRouter()
+    const router = useRouter();
 
     const handleDelete = () => {
-        comment&& deleteRowById(comment.id, comment.user_id, photoUrl)
-        router.push('/home')
-    } 
+    //window対策を講じる
+        const confirmDelete = window.confirm("本当に削除しますか？");
+        if (confirmDelete && comment) {
+            deleteRowById(comment.id, comment.user_id, photoUrl)
+                .then(() => {
+                    router.push('/home'); // 削除成功後に/homeへリダイレクト
+                })
+                .catch(error => {
+                    console.error('削除に失敗しました:', error);
+                });
+        } else {
+            console.log('削除はキャンセルされました');
+        }
+    };
 
     useEffect(() => {
         supabase.auth.getUser().then((user) => {
@@ -49,20 +60,13 @@ export default function DetailPage() {
         const { data } = await supabase
             .storage
             .from('public-image-bucket')
-            .getPublicUrl(photoUrl)
-            ;
+            .getPublicUrl(photoUrl);
 
-        // if (error) {
-        //     console.log(error);
-        //     return;
-        // }
         await fetchComment(photoUrl);
         setLoadingState("hidden");
     };
 
     const fetchComment = async (imageUrl: string) => {
-        // const tempComments: { [key: string]: Comment[] } = {};
-
         const { data, error } = await supabase
             .from('comments')
             .select('user_id, id, comment, event_date, latitude, longitude') // 修正：created_at を event_date に変更
@@ -84,9 +88,7 @@ export default function DetailPage() {
                 }
             );
         }
-
     };
-
 
     useEffect(() => {
         if (user_id) {
@@ -100,18 +102,15 @@ export default function DetailPage() {
                 <div className="animate-spin h-10 w-10 border-4 border-blue-500 rounded-full border-t-transparent"></div>
             </div>
             <ul className="flex flex-wrap w-full">
-
                 <li className="h-auto p-1">
-
                     <img className="object-cover" style={{ aspectRatio: 1 / 1 }} src={public_url + photoUrl} alt={photoUrl} />
-
                     <ul className="mt-2">
-                        <li className="text-sm whitespace-nowrap overflow-hidden text-ellipsis" >{comment?.comment}</li>
-                        <span className="text-xs subText  ml-2">
+                        <li className="text-sm whitespace-nowrap overflow-hidden text-ellipsis">{comment?.comment}</li>
+                        <span className="text-xs subText ml-2">
                             日付: {comment?.event_date} {/* 修正：created_at を event_date に変更 */}
                         </span>
-                        <p>longitude:{comment?.longitude}</p>
-                        <p>latitude:{comment?.latitude}</p>
+                        <p>longitude: {comment?.longitude}</p>
+                        <p>latitude: {comment?.latitude}</p>
                     </ul>
                 </li>
             </ul>
@@ -120,9 +119,8 @@ export default function DetailPage() {
             </Link>
             <p>{comment?.id}</p>
             <p>{comment?.user_id}</p>
-            <button
-                onClick={() =>handleDelete()}>
-                    削除
+            <button onClick={handleDelete}>
+                削除
             </button>
         </div>
     );

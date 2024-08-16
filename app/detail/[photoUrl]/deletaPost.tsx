@@ -7,7 +7,6 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default async function deleteRowById(id: string, user_id: string, image_name: string) {
-    
     try {
         // Supabase の "comments" テーブルから指定された ID の行を削除
         const { data, error } = await supabase
