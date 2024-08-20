@@ -43,7 +43,7 @@
 }
 
 .subTitle {
-    font-size: calc(1.0vw + 1.0vh + 0.5rem); /* 画面の幅と高さに応じたサブタイトルサイズ */
+    font-size: calc(2.0vh + 0.5rem); /* 画面の幅と高さに応じたサブタイトルサイズ */
     max-width: 90%; /* 最大幅を設定して溢れを防ぐ */
     text-align: center;
     color: #886771;
@@ -59,7 +59,7 @@
 }
 
 .signUp {
-    font-size: calc(1.0vw + 1.0vh + 0.5rem); /* 画面の幅と高さに応じたサブタイトルサイズ */
+    font-size: calc(2.0vh + 0.5rem); /* 画面の幅と高さに応じたサブタイトルサイズ */
     max-width: 90%; /* 最大幅を設定して溢れを防ぐ */
     text-align: center;
     color: #886771;
@@ -67,10 +67,12 @@
 }
 
 .signUpButton {
-    font-size: calc(1.5vw + 1.5vh + 0.5rem); /* 画面の幅と高さに応じたテキストサイズ */
+    font-size: 14px; /* 画面の幅と高さに応じたテキストサイズ */
     color: #886771;
+    width: 181.38;
+    height: 38;
     margin: 0 auto;
-    padding: 10px; /* ボタンの余白 */
+    padding: 0 12px; /* ボタンの余白 */
     display: flex;
     justify-content: center;
     background-color: #E5E4E4;

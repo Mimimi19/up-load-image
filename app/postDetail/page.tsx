@@ -14,7 +14,7 @@ export default function Index() {
   supabase.auth.getUser()
   return (
     <>
-      <h1 className="NewPost">新規投稿</h1>
+      <h1 className="NewPost">New Post</h1>
       {typeof window !== 'undefined' && (
       <div className="date">
         <ImageApp />

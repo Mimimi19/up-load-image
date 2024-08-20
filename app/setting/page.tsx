@@ -16,7 +16,7 @@ export default function Setting() {
 
     return (
         <div className="settings-container">
-            <h2 className="custom-heading">設定</h2>
+            <h2 className="custom-heading">Setting</h2>
             <div className="button-group">
                 <button className="settings-button" onClick={rootHelp}>
                     ヘルプページ
@@ -24,11 +24,6 @@ export default function Setting() {
                 <button className="settings-button" onClick={rootAbout}>
                     このサイトについて
                 </button>
-                <Link href="/editProfile" passHref>
-                    <button className="settings-button">
-                        プロフィールを編集
-                    </button>
-                </Link>
             </div>
         </div>
     );
