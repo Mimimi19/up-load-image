@@ -2,28 +2,28 @@
 /* 文字の色、大きさ、位置をカスタマイズ */
 
 .custom-heading {
-    color: #886771; /* 文字の色を青色に設定 */
-    font-size: 2rem; /* 文字の大きさを設定 */
-    text-align: center; /* 文字を中央に配置 */
-    margin-top: 20px; /* 上部に余白を追加 */
-    margin-bottom: 2%;
-  }
-  
-  .scroll-container {
-    max-height: 500px; /* 必要に応じて高さを調整 */
-    max-width: 100%;
-    overflow-y: scroll; /* 縦方向のスクロールを有効にする */
-    overflow-x: hidden; /* 横方向のスクロールを無効にする */
-    padding: 0px; /* 内側の余白 */
-  }
-  
-  /* スクロールバーのスタイルを非表示にする */
-  .scroll-container::-webkit-scrollbar {
-    width: 0; /* スクロールバーの幅を0にする */
-    height: 0; /* 横スクロールバーも隠す */
-  }
-  
-  .scroll-container {
-    -ms-overflow-style: none; /* IE 10+ */
-    scrollbar-width: none; /* Firefox */
-  }
+  color: #886771; /* 文字の色を青色に設定 */
+  font-size: 2rem; /* 文字の大きさを設定 */
+  text-align: center; /* 文字を中央に配置 */
+  margin-top: 20px; /* 上部に余白を追加 */
+  margin-bottom: 2%;
+}
+
+.scroll-container {
+  max-height: 100%; /* 必要に応じて高さを調整 */
+  max-width: 100%;
+  overflow-y: scroll; /* 縦方向のスクロールを有効にする */
+  overflow-x: hidden; /* 横方向のスクロールを無効にする */
+  padding: 0px; /* 内側の余白 */
+}
+
+/* スクロールバーのスタイルを非表示にする */
+.scroll-container::-webkit-scrollbar {
+  width: 0; /* スクロールバーの幅を0にする */
+  height: 0; /* 横スクロールバーも隠す */
+}
+
+.scroll-container {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}

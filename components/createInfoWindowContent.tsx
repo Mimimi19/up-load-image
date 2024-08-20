@@ -9,7 +9,7 @@ const createInfoWindowContent = (lat: number, lng: number): string => {
                 緯度: ${lat}<br>経度: ${lng}
             </div>
             <div class="toukou"> 
-                <a href="${url}" target="_blank">投稿</a>
+                <a href="${url}" target="_blank">Post</a>
             </div>
         </div>`;
 };

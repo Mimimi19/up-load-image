@@ -144,6 +144,7 @@ export default function ImageApp() {
     }
 
     if (!comment.trim()) {
+      setLoadingState(false);
       setErrorMessage("コメントは必須です。"); // コメントが入力されていない場合のエラーメッセージ
       return;
     }

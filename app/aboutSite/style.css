@@ -34,7 +34,7 @@
     align-items: center; /* 中央に揃える */
   }
 
-  .Image, .nextjs, .supabase, .tailwindcss, .github, .vercel,.react,.googlemapapi {
+  .Image, .nextjs, .supabase, .tailwindcss, .github, .vercel,.react,.googlemapapi{
     height:auto;
     width: 15vw; /* ビューポート幅の30%に設定 */
     height: 15vw; /* 幅と同じ比率に設定 */

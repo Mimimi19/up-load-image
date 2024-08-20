@@ -16,7 +16,7 @@ export default function LogoutCheck() {
 
     return (
         <>
-            <h2 className="logout">ログアウト</h2>
+            <h2 className="logout">Logout</h2>
             <div className="button-group">
                 <button className="custom-buttonYes" onClick={handleLogout}>ログアウトする</button>
                 <button className="custom-buttonNo" onClick={backLogout}>戻る</button>
